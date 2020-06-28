@@ -1,0 +1,13 @@
+img.image {
+  /*whatever you want to do here*/
+}
+#colorpicker {
+  border: 0px;
+  width: 63;
+  height: 342;
+  position: relative;
+  margin: 0px auto;
+  margin-left: 1002px;
+  background-image: url(/static/images/home_slider.jpg);
+  background-repeat: no-repeat;
+}

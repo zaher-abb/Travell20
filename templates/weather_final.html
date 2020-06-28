@@ -1,0 +1,256 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Regular Weather Report Flat Responsive Widget Template :: w3layouts</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Regular Weather Report template Responsive, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login sign up Responsive web template, SmartPhone Compatible web template, free web designs for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+<link href="{% static 'styles/style.css'%}" rel="stylesheet" type="text/css" media="all" />
+<link href="{% static 'styles//owl.carousel.css'%}" rel="stylesheet" type="text/css" media="all">
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'><!--web font-->
+<link href='//fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="{% static 'js/jquery-1.9.1.min.js'%}"></script>
+<script src="{% static 'js/owl.carousel.js'%}"></script>
+<script>
+	$(document).ready(function() {
+		$("#owl-demo").owlCarousel({
+
+		  autoPlay: 3000, //Set AutoPlay to 3 seconds
+
+		  items : 6,
+		  itemsDesktop : [640,5],
+		  itemsDesktopSmall : [414,4]
+
+		});
+
+	});
+</script>
+<!-- //js -->
+</head>
+<body onload="startTime()">
+<div class="super_container">
+<header class="header">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="header_content d-flex flex-row align-items-center justify-content-start">
+						<div class="header_content_inner d-flex flex-row align-items-end justify-content-start" style="font-size:20px">
+							<div style="margin-left:100px;font-family: Arial; color:white;font-weight:bold" class="logo"><a href="{% url 'Booking:index'%}" style="color:white;text-decoration:none">Travel20</a></div>
+							<nav class="main_nav" style="margin-top:3%; font-family: Arial; color:white;font-weight:bold ">
+								<ul class="d-flex flex-row align-items-start justify-content-start" >
+                                    <li style="margin-left:50px"><a href="{% url 'Booking:index'%}" style="color:white;padding-left:10px;text-decoration:none"> Home</a></li>
+									<li><a href="{% url 'account:register'%}" style="color:white;padding-left:25px;text-decoration:none">Register</a></li>
+                                    <li><a href="{% url 'account:login'%}" style="color:white;padding-left:25px;text-decoration:none">login</a></li>
+                                    <li><a href="{% url 'weather:w'%}" style="color:white;padding-left:25px;text-decoration:none">Weather</a></li>
+									<li><a href="{% url 'Booking:contect'%}" style="color:white;padding-left:25px;text-decoration:none; padding-right: 75px;">Contact</a></li>
+								</ul>
+							</nav>
+							<div style="color:white;font-weight:bold" class="header_phone ml-auto">Call us: 00-56 445 678 33</div>
+
+							<!-- Hamburger -->
+
+							<div class="hamburger ml-auto">
+								<i class="fa fa-bars" aria-hidden="true"></i>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="header_social d-flex flex-row align-items-center justify-content-start">
+			<ul class="d-flex flex-row align-items-start justify-content-start">
+				<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+				<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+				<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+				<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+				<li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+				<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+			</ul>
+		</div>
+	</header>
+</div>
+
+<h4 style="margin:3% 0 -3% 41%">Regular Weather Report</h4>
+<!-- main -->
+	<div class="main" style="opacity: 0.8;">
+
+		<div class="main-wthree-row">
+			<div class="agileits-top">
+				<div class="agileinfo-top-row">
+					<div class="agileinfo-top-img">
+						<span> </span>
+					</div>
+					<h3>{{ city_weather.temp }}<sup class="degree">°</sup><span>C</span></h3>
+					<p>{{city_weather.city}}</p>
+                    <p>{{city_weather.country}}</p>
+					<div class="agileinfo-top-time">
+						<div class="date-time" >
+							<div class="dmy">
+								<div id="txt"></div>
+								<div class="date" style="font-family:Arial;color:dodgerblue;font-weight:bold">
+									<!-- Date-JavaScript -->
+									<script type="text/javascript">
+									var mydate=new Date()
+									var year=mydate.getYear()
+									if(year<1000)
+									year+=1900
+									var day=mydate.getDay()
+									var month=mydate.getMonth()
+									var daym=mydate.getDate()
+									if(daym<10)
+									if(daym<10)
+									daym="0"+daym
+									var dayarray=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday")
+									var montharray=new Array("January","February","March","April","May","June","July","August","September","October","November","December")
+									document.write(""+dayarray[day]+", "+montharray[month]+" "+daym+", "+year+"")
+									</script>
+									<!-- //Date-JavaScript -->
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="w3ls-bottom">
+				<h2 style="margin-top:-9px;font-family: Arial ">Current weather </h2>
+                <article class="ac-small">
+						<div class="wthree-grids">
+							<div class="wthree-grids-row">
+								<ul class="top" style="font-family: Arial;color:darkorange">
+									<li style="margin-left:4%;color:darkorange;font-weight:bold">{{ city_weather.city }} </li>
+									<li style="margin-left:-15%" class="wthree-img" ><img src="http://openweathermap.org/img/w/{{ city_weather.icon }}.png" alt=""/> </li>
+									<li style="color:darkorange;font-weight:bold" class="wthree-temp"> {{ city_weather.temp }} <sup class="degree">°</sup></li>
+                                    <li style="color:darkorange;font-weight:bold" class="wthree-temp"> {{ city_weather.des }} <sup class="description"></sup></li>
+								</ul>
+								<div class="clear"> </div>
+							</div>
+						</div>
+                </article>
+			</div>
+
+           <div class="home_search_content">
+			<form action="weather" method="POST"   class="home_search_form" id="home_search_form">
+                {% csrf_token %}
+                <label for="gsearch" style="font-size:17px;font-weight:bold;font-family: Arial;color:darkorange; margin:5% 0 5%  7%">Search a City:</label>
+                <input type="search" id="gsearch" name="weather">
+                <button type="submit" class="search_input">search</button>
+            </form>
+            </div>
+            {% csrf_token %}
+                 {% for message in messages %}
+                    <li>
+                     <div class="alert alert-danger">{{message}}</div>
+                    </li>
+                 {% endfor %}
+
+			<div class="w3ls-bottom2">
+				<div class="ac-container">
+					<input id="ac-1" name="accordion-1" type="checkbox" />
+					<label for="ac-1" class="grid1">more Details</label>
+					<article class="ac-small">
+						<div class="wthree-grids">
+							<div class="wthree-grids-row">
+								<ul class="top">
+									<li> description</li>
+
+									<li class="wthree-img"><img src="http://openweathermap.org/img/w/{{ city_weather.icon }}.png" alt=""/> </li>
+									<li class="wthree-temp"> {{city_weather.description}}</li>
+								</ul>
+								<div class="clear"> </div>
+							</div>
+						</div>
+                        <div class="wthree-grids">
+							<div class="wthree-grids-row">
+								<ul class="top">
+									<li> feeling like</li>
+
+									<li class="wthree-img"><img src="" alt=""/> </li>
+									<li class="wthree-temp"> {{city_weather.feels}}<sup class="degree">°</sup></li>
+								</ul>
+								<div class="clear"> </div>
+							</div>
+						</div>
+                        <div class="wthree-grids">
+							<div class="wthree-grids-row">
+								<ul class="top">
+									<li> min temperature</li>
+
+                                    <li class="wthree-img"><img src="" alt=""/> </li> </li>
+									<li class="wthree-temp"> {{city_weather.min}}<sup class="degree">°</sup></li>
+								</ul>
+								<div class="clear"> </div>
+							</div>
+						</div>
+                        <div class="wthree-grids">
+							<div class="wthree-grids-row">
+								<ul class="top">
+									<li> max temperature</li>
+
+                                    <li class="wthree-img"><img src="" alt=""/> </li> </li>
+									<li class="wthree-temp"> {{city_weather.max}}<sup class="degree">°</sup></li>
+								</ul>
+								<div class="clear"> </div>
+							</div>
+						</div>
+                             <div class="wthree-grids">
+							<div class="wthree-grids-row">
+								<ul class="top">
+									<li> pressure</li>
+
+                                    <li class="wthree-img"><img src="" alt=""/> </li> </li>
+									<li class="wthree-temp"> {{city_weather.pressure}}</li>
+								</ul>
+								<div class="clear"> </div>
+							</div>
+						</div>
+                                   <div class="wthree-grids">
+							<div class="wthree-grids-row">
+								<ul class="top">
+									<li> wind speed</li>
+                                    <li class="wthree-img"><img src="" alt=""/> </li> </li>
+									<li class="wthree-temp"> {{city_weather.wind}}<sup>m/s</sup></li>
+								</ul>
+								<div class="clear"> </div>
+							</div>
+						</div>
+
+					</article>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //main -->
+	<!-- copyright -->
+	<div class="copyright" style="margin-top: -30px;">
+		<p> © 2020 Regular Weather Report . All rights reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a></p>
+	</div>
+	<!-- //copyright -->
+	<!-- Time-JavaScript -->
+	<script>
+		function startTime() {
+			var today = new Date();
+			var h = today.getHours();
+			var m = today.getMinutes();
+			var s = today.getSeconds();
+			m = checkTime(m);
+			s = checkTime(s);
+			document.getElementById('txt').innerHTML =
+			h + ":" + m + ":" + s;
+
+			var t = setTimeout(startTime, 500);
+			}
+			function checkTime(i) {
+			if (i < 10) {i = "0" + i}; // add zero in front of numbers < 10
+			return i;
+		}
+	</script>
+	<!-- //Time-JavaScript -->
+</body>
+</html>
