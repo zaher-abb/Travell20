@@ -39,7 +39,7 @@ def contactus(request):
 
 
 
-        send_mail(subject,message1,'zaherabb12@gmail.com',[email],fail_silently=False)
+        send_mail(subject,message1,email,['zaherabb12@gmail.com'],fail_silently=False)
 
         return render(request,'contact.html',{'name':name})
 
