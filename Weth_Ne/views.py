@@ -9,7 +9,7 @@ def weather(request):
     if request.method == 'POST':
     city2 = request.POST['weather']
     context = ""
-    url = f'https://api.openweathermap.org/data/2.5/weather?appid={os.envieroment.get(')}&q={city2}'
+    url = f'https://api.openweathermap.org/data/2.5/weather?appid={your_key}&q={city2}'
     url_checker = requests.get(url)
     if url_checker.status_code == 200:
         r = requests.get(url).json()
