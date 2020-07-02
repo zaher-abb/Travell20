@@ -13,8 +13,8 @@ def register(request):
         username = request.POST['username']
         password = request.POST['password']
         re_password= request.POST['re_password']
-        if(password==re_password):
-            if(User.objects.filter(username=username).exists()):
+        if password==re_password :
+            if User.objects.filter(username=username).exists() :
                messages.info(request,'Username is Taken')
                return redirect('account:register')
             elif(User.objects.filter(email=email).exists()):
@@ -22,7 +22,7 @@ def register(request):
                return redirect('account:register')
             else:
               user=User.objects.create_user(username=username,password=password,email=email,first_name=first_name,last_name=last_name)
-              user.save();
+              user.save()
         else:
             messages.info(request, 'password not matched')
             return redirect('account:register')
