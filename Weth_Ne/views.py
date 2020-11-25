@@ -35,7 +35,7 @@ def weather(request):
     location_url = 'https://ipinfo.io/'
     location_data = requests.get(location_url).json()
     city2 = location_data['city']
-    url = f'https://api.openweathermap.org/data/2.5/weather?appid=40888a894484a9c947653e53e5c61f72&q={city2}'
+    url = f'https://api.openweathermap.org/data/2.5/weather?appid={your_key}&q={city2}'
     r = requests.get(url).json()
 
     city_weather = {
